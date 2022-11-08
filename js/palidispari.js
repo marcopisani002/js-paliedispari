@@ -1,7 +1,7 @@
 const reverseWordEl = document.querySelector(".reverse-word-section");
 const submitBtn = reverseWordEl.querySelector(".reverse-button");
 
-
+// funzione per inversione stringa
 
 function invertiParola(str) {
     const strInversa = str.split('').reverse().join('');
@@ -9,6 +9,9 @@ function invertiParola(str) {
 
 
 }
+
+//codice attivo al  click del bottone "SCOPRI SE E' PALINDROMA!"
+
 
 submitBtn.addEventListener("click", function () {
 
