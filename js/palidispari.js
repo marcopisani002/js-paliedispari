@@ -1,12 +1,39 @@
-const reverseWordEl= document.querySelector(".reverse-word-section");
-const submitBtn = reverseWordEl.querySelector( " reverse-button" );
+const reverseWordEl = document.querySelector(".reverse-word-section");
+const submitBtn = reverseWordEl.querySelector(".reverse-button");
 
-submitBtn.addEventListener("click", function() {
 
-    const inputEl= document.getElementById("word-pali")
-    const resultEl = reverseWordEl.querySelector(".result");
+
+function invertiParola(str) {
+    const strInversa = str.split('').reverse().join('');
+    return strInversa;
+
+
+}
+
+submitBtn.addEventListener("click", function () {
+
+    const inputEl = document.getElementById("word-pali")
     const parolaInversa = invertiParola(inputEl.value);
-    console.log("Nome inserito:", inputEl.value);
+
+    //stampa HTML -->PAROLA INSERITA
+    const printValueEl = document.getElementById("printing-value");
+    printValueEl.innerHTML = `<em>Parola inserita</em> :<strong> ${inputEl.value}</strong> `;
+
+
+    if (inputEl.value == parolaInversa) {
+        //stampa HTML -->PAROLA verifica SI
+
+        const resultEl = document.getElementById("printing");
+        resultEl.innerHTML = ` La parola <strong> ${inputEl.value}</strong> è palindroma ! :)`;
+
+    } else {
+        //stampa HTML -->PAROLA verifica NO
+
+        const resultEl = document.getElementById("printing");
+        resultEl.innerHTML = ` La parola <strong> ${inputEl.value}</strong> NON è palindroma. :(`;
+
+    }
+
 
 })
 
@@ -18,15 +45,4 @@ submitBtn.addEventListener("click", function() {
 
 
 
-  
-if(inputEl.value == parolaInversa){
-    console.log('la parola è palindroma');
-  } else {
-    console.log('la parola non è palindroma');
-  }
-function invertiParola(str){
-  const strInversa = str.split('').reverse().join('');  
-  return strInversa;
-   
-  
-}
+

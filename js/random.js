@@ -1,6 +1,6 @@
 
 const sectionPariDispariEl = document.querySelector( ".pari_dispari_section" );
-const randomBtn = sectionPariDispariEl.querySelector( "button-paridisp" );
+const randomBtn = sectionPariDispariEl.querySelector( ".button-paridisp" );
 
 randomBtn.addEventListener("click", function() {
   const inputEl = document.getElementById("inpparidisp");
